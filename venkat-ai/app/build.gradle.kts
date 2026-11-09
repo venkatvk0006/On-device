@@ -74,7 +74,7 @@ android {
 // to match the convention used in Web projects.
 secrets {
   propertiesFileName = ".env"
-  defaultPropertiesFileName = ".env.example"
+  defaultPropertiesFileName = ".env.venkat.ai"
   ignoreList.add("FIREBASE_APPCHECK_DEBUG_TOKEN")
 }
 
