@@ -65,7 +65,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.R
+import com.venkat.ai.R
 import com.example.data.model.ChatMessageEntity
 import com.example.ui.components.AiLoadingIndicator
 import com.example.ui.components.ChatInputBar
