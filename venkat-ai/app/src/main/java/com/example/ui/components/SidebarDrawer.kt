@@ -48,8 +48,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.R
-import com.example.data.model.ConversationEntity
+import com.venkat.ai.R
+import com.venkat.ai.data.model.ConversationEntity
 import com.example.ui.theme.GeminiBlue
 import com.example.ui.theme.GeminiCyan
 import com.example.ui.theme.GeminiPurple
