@@ -9,11 +9,11 @@ plugins {
 }
 
 android {
-  namespace = "com.example"
+  namespace = "com.venkat.ai"
   compileSdk { version = release(36) { minorApiLevel = 1 } }
 
   defaultConfig {
-    applicationId = "com.example"
+    applicationId = "1:137579737047:android:b6be33cd8b81b150ada592"
     minSdk = 24
     targetSdk = 36
     versionCode = 1
