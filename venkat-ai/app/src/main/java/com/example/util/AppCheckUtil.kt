@@ -3,7 +3,7 @@ package com.example.util
 import android.content.Context
 import android.content.Intent
 import android.util.Log
-import com.example.BuildConfig
+import com.venkat.ai.BuildConfig
 import com.google.firebase.FirebaseApp
 import com.google.firebase.appcheck.FirebaseAppCheck
 import com.google.firebase.appcheck.debug.DebugAppCheckProviderFactory
