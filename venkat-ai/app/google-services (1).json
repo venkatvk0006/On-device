@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "137579737047",
+    "project_id": "venkat-ai",
+    "storage_bucket": "venkat-ai.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:137579737047:android:b6be33cd8b81b150ada592",
+        "android_client_info": {
+          "package_name": "com.venkat.ai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjciGM-qPf-AkRc9zleY0kheKiZnul5wM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
