@@ -18,7 +18,7 @@ import android.os.VibratorManager
 import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.example.MainActivity
-import com.example.R
+import com.venkat.ai.R
 
 private const val TAG = "WakeWordService"
 private const val CHANNEL_ID = "venkat_ai_wake_word_channel"
