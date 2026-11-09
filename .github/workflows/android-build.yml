@@ -5,15 +5,13 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
 
 permissions:
   contents: read
 
 jobs:
   build:
-    name: Build Venkat AI
+    name: Build Venkat AI APK
     runs-on: ubuntu-latest
 
     steps:
@@ -35,13 +33,16 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Verify Project
+      - name: Verify Android Project
+        working-directory: ./venkat-ai
         run: |
           ls -la
           test -f gradlew
+          test -f settings.gradle.kts
           test -f app/build.gradle.kts
 
-      - name: Build Venkat AI APK
+      - name: Build Debug APK
+        working-directory: ./venkat-ai
         run: |
           chmod +x gradlew
           ./gradlew --no-daemon clean assembleDebug
@@ -50,6 +51,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Venkat-AI-APK
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: venkat-ai/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 30
