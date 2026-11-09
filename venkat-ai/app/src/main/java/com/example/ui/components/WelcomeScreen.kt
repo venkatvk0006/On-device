@@ -53,8 +53,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.R
-import com.example.ui.theme.GeminiBlue
+import com.venkat.ai.R
+import com.venkat.ai.ui.theme.GeminiBlue
 import com.example.ui.theme.GeminiCyan
 import com.example.ui.theme.GeminiPurple
 
