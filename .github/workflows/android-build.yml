@@ -4,11 +4,9 @@ name: Venkat AI Android APK Builder
 on:
   workflow_dispatch:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
 
 permissions:
   contents: read
@@ -30,27 +28,34 @@ jobs:
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          accept-android-sdk-licenses: true
+
+      - name: Accept All Android Licenses
+        run: yes | sdkmanager --licenses
 
       - name: Install Android SDK
         run: |
           sdkmanager --install \
             "platform-tools" \
-            "platforms;android-36-ext1" \
+            "platforms;android-36.1" \
             "build-tools;36.0.0"
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Build Venkat AI
+      - name: Build Venkat AI APK
         working-directory: ./venkat-ai
         run: |
           chmod +x gradlew
           ./gradlew clean assembleDebug
 
-      - name: Upload Venkat AI APK
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: Venkat-AI-APK
           path: venkat-ai/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 30
+
+        
