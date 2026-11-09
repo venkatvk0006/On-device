@@ -1,5 +1,5 @@
 
-name: Venkat AI Android APK Builder
+name: Venkat AI APK Builder
 
 on:
   workflow_dispatch:
@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   build:
-    name: Build Venkat AI APK
+    name: Build Venkat AI
     runs-on: ubuntu-latest
 
     steps:
@@ -26,20 +26,14 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-        with:
-          accept-android-sdk-licenses: true
-
-      - name: Accept All Android Licenses
-        run: yes | sdkmanager --licenses
-
-      - name: Install Android SDK
+      - name: Configure Android SDK
         run: |
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          echo "ANDROID_SDK_ROOT=$ANDROID_HOME"
+          yes | sdkmanager --licenses || true
           sdkmanager --install \
             "platform-tools" \
-            "platforms;android-36.1" \
-            "build-tools;36.0.0"
+            "platforms;android-36.1"
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
@@ -57,5 +51,6 @@ jobs:
           path: venkat-ai/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 30
+
 
         
