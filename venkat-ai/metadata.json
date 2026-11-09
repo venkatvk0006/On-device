@@ -1,0 +1,6 @@
+{
+  "name": "VENKAT AI",
+  "description": "Your Intelligent AI Companion with Tamil and English support, voice chat, and multimodal vision.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
