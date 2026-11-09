@@ -7,19 +7,31 @@ plugins {
   alias(libs.plugins.secrets)
   alias(libs.plugins.google.services)
 }
-
 android {
-  namespace = "com.venkat.ai"
-  compileSdk { version = release(36) { minorApiLevel = 1 } }
+    namespace = "com.venkat.ai"
 
-  defaultConfig {
-    applicationId = "1:137579737047:android:b6be33cd8b81b150ada592"
-    minSdk = 24
-    targetSdk = 36
-    versionCode = 1
-    versionName = "1.0"
+    compileSdk {
+        version = release(36) {
+            minorApiLevel = 1
+        }
+    }
 
-    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    defaultConfig {
+        applicationId = "com.venkat.ai"
+        minSdk = 24
+        targetSdk = 36
+        versionCode = 1
+        versionName = "1.0"
+
+        testInstrumentationRunner =
+            "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        compose = true
+        buildConfig = true
+    }
+}
   }
 
   // Do not remove or modify these signingConfigs. They are necessary for building, installing,
