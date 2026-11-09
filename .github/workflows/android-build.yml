@@ -27,25 +27,26 @@ jobs:
           java-version: '17'
 
       - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v4
         with:
+          packages: 'platform-tools'
           accept-android-sdk-licenses: true
-
-      - name: Verify Android SDK
-        run: |
-          echo "ANDROID_HOME=$ANDROID_HOME"
-          which sdkmanager
-          sdkmanager --version
-          yes | sdkmanager --licenses
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Build Venkat AI
+      - name: Verify Project
+        working-directory: ./venkat-ai
+        run: |
+          ls -la
+          test -f gradlew
+          test -f app/build.gradle.kts
+
+      - name: Build Venkat AI APK
         working-directory: ./venkat-ai
         run: |
           chmod +x gradlew
-          ./gradlew clean assembleDebug
+          ./gradlew --no-daemon clean assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
@@ -54,6 +55,3 @@ jobs:
           path: venkat-ai/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 30
-
-
-        
